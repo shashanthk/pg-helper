@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
             dbHost = "localhost";
         }
 
-        let statement = `pg_dump -U ${dbUsername} -h ${dbHost} -d ${dbName} > ${dbName}.sql`;
+        let statement = `pg_dump -U ${dbUsername} -h ${dbHost} ${dbName} > ${dbName}.sql`;
 
         if (!onlySchema && cleanOption) {
             statement += " --clean";
